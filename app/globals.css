@@ -1,0 +1,101 @@
+:root {
+  --bg: #14150f;
+  --surface: #1e1f1a;
+  --surface2: #26271f;
+  --ink: #ececec;
+  --muted: #a0a199;
+  --hint: #76776f;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #2f8f6f;
+  --danger: #e24b4a;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 18px 64px; }
+
+.head { margin-bottom: 24px; }
+.eyebrow { font-size: 13px; color: var(--muted); letter-spacing: 0.04em; }
+.head h1 { font-size: 26px; font-weight: 500; margin: 2px 0 0; }
+
+.input-card, .output, .panel {
+  background: var(--surface);
+  border: 0.5px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 18px;
+}
+
+label { font-size: 14px; font-weight: 500; }
+.hint { font-size: 13px; color: var(--muted); margin: 4px 0 12px; }
+
+textarea {
+  width: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  border: 0.5px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  resize: vertical;
+}
+
+.actions { display: flex; gap: 10px; margin-top: 14px; }
+button {
+  font-size: 14px; padding: 9px 16px; border-radius: 8px;
+  border: 0.5px solid var(--line); cursor: pointer;
+}
+button:disabled { opacity: 0.5; cursor: default; }
+.primary { background: var(--accent); color: #fff; border-color: transparent; }
+.ghost { background: transparent; color: var(--ink); }
+
+.working { font-size: 13px; color: var(--muted); margin-top: 12px; }
+.error { font-size: 13px; color: var(--danger); margin-top: 12px; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 18px; }
+.tabs button { background: var(--surface2); color: var(--muted); }
+.tabs button.on { background: var(--accent); color: #fff; border-color: transparent; }
+
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.metric { background: var(--surface2); border-radius: 10px; padding: 14px 16px; }
+.m-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.m-value { font-size: 24px; font-weight: 500; }
+.m-unit { font-size: 14px; color: var(--muted); }
+
+.panel h3 { font-size: 16px; font-weight: 500; margin: 0 0 2px; }
+.panel .sub { font-size: 13px; color: var(--muted); margin: 0 0 16px; }
+
+.hm { display: grid; gap: 4px; align-items: center; }
+.hm-hd { font-size: 11px; color: var(--muted); text-align: center; padding-bottom: 4px; }
+.hm-rl { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hm-cell { display: flex; align-items: center; justify-content: center; height: 34px; border-radius: 6px; color: #fff; font-size: 13px; font-weight: 500; }
+
+.legend { display: flex; gap: 14px; margin-top: 14px; font-size: 12px; color: var(--muted); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.abbr { font-size: 11px; color: var(--hint); margin-top: 10px; }
+
+.rm { display: flex; flex-direction: column; gap: 4px; }
+.rm-row { display: grid; grid-template-columns: 110px repeat(5, 1fr); gap: 4px; }
+.rm-rl { font-size: 11px; color: var(--muted); display: flex; align-items: center; }
+.rm-cell { display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 6px; color: #fff; font-size: 14px; font-weight: 500; }
+.rm-hd { font-size: 11px; color: var(--muted); text-align: center; }
+
+.gaps { margin: 0; padding-left: 18px; font-size: 14px; }
+.gaps li { margin: 4px 0; }
+
+.report { font-size: 15px; }
+.report h1, .report h2, .report h3 { font-weight: 500; }
+.report table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+.report th, .report td { border: 0.5px solid var(--line); padding: 6px 10px; text-align: left; font-size: 14px; }
+.report code { background: var(--surface2); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
