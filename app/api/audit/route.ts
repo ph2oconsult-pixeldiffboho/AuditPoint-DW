@@ -60,7 +60,8 @@ export async function POST(req: NextRequest) {
   try {
     const message = await client.messages.create({
       model: MODEL,
-      max_tokens: 16000,
+      max_tokens: 32000,
+      temperature: 0,
       system: getSystemPrompt(),
       messages: [{ role: "user", content: plantData }],
     });
